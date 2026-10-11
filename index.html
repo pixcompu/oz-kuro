@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oz · la mascota</title>
+  <meta name="description" content="Oz es un gato negro de ojos amarillos, experto en emboscadas y guardián de su castillo azul.">
+  <meta name="theme-color" content="#FF7A00">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Oz · la mascota">
+  <meta property="og:description" content="Un gato negro, ojos amarillos y mordidas sorpresa.">
+  <meta property="og:image" content="assets/img/oz1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap topbar">
+      <div class="brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 54 L12 14 L26 26 Q32 24 38 26 L52 14 L52 54 Z"/><ellipse cx="23" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="41" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="23" cy="38" rx="1.4" ry="4.2"/><ellipse cx="41" cy="38" rx="1.4" ry="4.2"/></svg>
+        oz
+      </div>
+      <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <div class="wrap hero-stage">
+      <div>
+        <h1><span data-i18n="hello">Hola,</span><br><span data-i18n="im">soy</span> <span class="name">Oz</span></h1>
+        <p class="tagline" data-i18n="tagline">Mascota oficial. Experto en emboscadas. Muerde poquito (casi siempre).</p>
+      </div>
+      <div class="hero-stickers">
+        <img class="sticker main slap-in" src="assets/img/oz1.png" width="900" height="770" alt="Oz mordiendo una gorra negra" data-i18n-alt="altCap">
+        <span class="bubble slap-in" data-i18n="chomp">¡ñam!</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="facts" aria-labelledby="facts-title">
+      <div class="wrap">
+        <h2 id="facts-title" data-i18n="factsTitle">Ficha técnica</h2>
+        <p class="intro" data-i18n="factsIntro">Todo lo que necesitas saber antes de acercarte.</p>
+        <ul class="fact-list">
+          <li><b data-i18n="coat">Pelaje</b><span data-i18n="coatText">Negro total, modo ninja.</span></li>
+          <li><b data-i18n="eyes">Ojos</b><span data-i18n="eyesText">Amarillos. Te están mirando.</span></li>
+          <li><b data-i18n="hobby">Pasatiempo</b><span data-i18n="hobbyText">Ataques sorpresa a cualquier hora del día.</span></li>
+          <li><b data-i18n="bite">Mordida</b><span data-i18n="biteText">Suavecita… casi siempre.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="castle" aria-labelledby="castle-title">
+      <div class="wrap">
+        <div>
+          <h2 id="castle-title" data-i18n="castleTitle">El castillo azul de Oz</h2>
+          <p data-i18n="castleText">Es pequeño, es azul y es suyo. Oz lo vigila de día y de noche, y si te acercas demasiado, te vas a enterar.</p>
+          <div class="warning" data-i18n="castleWarning">⚠ No te acerques demasiado</div>
+        </div>
+        <div class="phone castle-video" aria-label="Acércate al castillo de Oz" data-i18n-aria="castleTouch">
+          <video src="assets/video/castle.mp4" poster="assets/video/castle.jpg" autoplay muted loop playsinline preload="metadata"
+                 aria-label="Video: Oz vigilando su castillo azul" data-i18n-aria="castleVideo"></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <h2 id="gallery-title" data-i18n="galleryTitle">Oz en todas sus formas</h2>
+        <p class="intro" data-i18n="galleryIntro">Sentado, estirado, panza arriba o hecho bolita.</p>
+        <p class="hint" data-i18n="galleryHint">Toca a Oz para oírlo maullar.</p>
+        <div class="sticker-wall">
+          <button type="button" class="meow a"><img class="sticker" src="assets/img/oz3.png" width="590" height="900" loading="lazy" alt="Oz sentado como persona, con las patas estiradas" data-i18n-alt="altSitting"></button>
+          <button type="button" class="meow b"><img class="sticker" src="assets/img/oz2.png" width="632" height="900" loading="lazy" alt="Oz recostado, mirando de reojo" data-i18n-alt="altLounging"></button>
+          <button type="button" class="meow c"><img class="sticker" src="assets/img/oz4.png" width="813" height="900" loading="lazy" alt="Oz panza arriba" data-i18n-alt="altBellyUp"></button>
+          <button type="button" class="meow d"><img class="sticker" src="assets/img/oz7.png" width="900" height="397" loading="lazy" alt="Oz echado de lado, listo para atacar" data-i18n-alt="altPounce"></button>
+          <button type="button" class="meow e"><img class="sticker" src="assets/img/oz5.png" width="769" height="900" loading="lazy" alt="Oz estirado en el piso" data-i18n-alt="altStretched"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <figure class="watcher">
+        <div class="phone">
+          <video src="assets/video/belly-up.mp4" poster="assets/video/belly-up.jpg" autoplay muted loop playsinline preload="metadata"
+                 aria-label="Video: Oz jugando panza arriba" data-i18n-aria="bellyUpVideo"></video>
+        </div>
+        <figcaption data-i18n="watching">Te está vigilando desde su página.</figcaption>
+      </figure>
+      <p data-i18n="footer">Hecho con cariño (y algunas mordidas).</p>
+      <img class="sticker" src="assets/img/oz6.png" width="535" height="583" loading="lazy" alt="">
+    </div>
+  </footer>
+
+  <template id="paw-template">
+    <div class="paw-attack" aria-hidden="true">
+      <div class="scratch"><span></span><span></span><span></span></div>
+      <svg class="paw sticker" viewBox="0 0 120 170">
+        <g fill="#FFF" stroke="#000" stroke-width="2.5" stroke-linejoin="round">
+          <path d="M13 46 Q8 14 26 30 Q19 32 21 44 Z"/>
+          <path d="M39 28 Q38 -2 54 14 Q46 15 47 26 Z"/>
+          <path d="M67 26 Q68 -2 82 14 Q74 15 75 26 Z"/>
+          <path d="M95 44 Q106 14 112 34 Q103 33 101 46 Z"/>
+        </g>
+        <rect x="28" y="100" width="64" height="70" rx="18" fill="#000"/>
+        <ellipse cx="60" cy="96" rx="40" ry="34" fill="#000"/>
+        <ellipse cx="22" cy="54" rx="13" ry="16" fill="#000"/>
+        <ellipse cx="46" cy="36" rx="14" ry="17" fill="#000"/>
+        <ellipse cx="74" cy="36" rx="14" ry="17" fill="#000"/>
+        <ellipse cx="98" cy="54" rx="13" ry="16" fill="#000"/>
+        <g fill="#6B5E66">
+          <path d="M60 82 C74 82 82 96 80 106 C78 114 68 112 60 112 C52 112 42 114 40 106 C38 96 46 82 60 82 Z"/>
+          <ellipse cx="23" cy="56" rx="6" ry="8"/>
+          <ellipse cx="46" cy="39" rx="7" ry="9"/>
+          <ellipse cx="74" cy="39" rx="7" ry="9"/>
+          <ellipse cx="97" cy="56" rx="6" ry="8"/>
+        </g>
+      </svg>
+    </div>
+  </template>
+
+  <div class="ambush" aria-hidden="true"><img class="sticker" src="assets/img/oz3.png" width="590" height="900" alt=""></div>
+</body>
+</html>
