@@ -2,10 +2,15 @@
   --orange: #FF7A00;
   --black: #000;
   --amber: #FFC21A;
+  --cream: #F6E6D0;
   --castle-blue: #2C4A86;
   --paper: #FFF;
 
   --gutter: clamp(16px, 5vw, 64px);
+  /* torn-paper edges (section colour + white paper rim in one image, so no seam shows), tile every 600px */
+  --torn-black: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 26" preserveAspectRatio="none"%3E%3Cpath fill="%23000" d="M0,26 L0,14 L19,11.7 L29,4.1 L49,20.5 L64,3.7 L75,14.4 L85,7.1 L101,14.9 L111,11.7 L127,5.4 L145,14.2 L163,16.6 L175,15.9 L195,4.8 L205,13.4 L227,12.9 L250,9.2 L264,9.1 L282,19.9 L305,21.7 L317,7.8 L336,13.3 L346,6.3 L365,11.0 L389,12.8 L400,13.1 L411,4.8 L434,11.6 L454,3.8 L468,13.4 L483,7.2 L499,20.6 L523,3.8 L540,18.9 L557,21.8 L578,7.6 L600,14 L600,26Z"/%3E%3Cpolyline fill="none" stroke="%23FFF" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke" points="0,14 19,11.7 29,4.1 49,20.5 64,3.7 75,14.4 85,7.1 101,14.9 111,11.7 127,5.4 145,14.2 163,16.6 175,15.9 195,4.8 205,13.4 227,12.9 250,9.2 264,9.1 282,19.9 305,21.7 317,7.8 336,13.3 346,6.3 365,11.0 389,12.8 400,13.1 411,4.8 434,11.6 454,3.8 468,13.4 483,7.2 499,20.6 523,3.8 540,18.9 557,21.8 578,7.6 600,14"/%3E%3C/svg%3E');
+  --torn-blue: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 26" preserveAspectRatio="none"%3E%3Cpath fill="%232C4A86" d="M0,26 L0,14 L19,11.7 L29,4.1 L49,20.5 L64,3.7 L75,14.4 L85,7.1 L101,14.9 L111,11.7 L127,5.4 L145,14.2 L163,16.6 L175,15.9 L195,4.8 L205,13.4 L227,12.9 L250,9.2 L264,9.1 L282,19.9 L305,21.7 L317,7.8 L336,13.3 L346,6.3 L365,11.0 L389,12.8 L400,13.1 L411,4.8 L434,11.6 L454,3.8 L468,13.4 L483,7.2 L499,20.6 L523,3.8 L540,18.9 L557,21.8 L578,7.6 L600,14 L600,26Z"/%3E%3Cpolyline fill="none" stroke="%23FFF" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke" points="0,14 19,11.7 29,4.1 49,20.5 64,3.7 75,14.4 85,7.1 101,14.9 111,11.7 127,5.4 145,14.2 163,16.6 175,15.9 195,4.8 205,13.4 227,12.9 250,9.2 264,9.1 282,19.9 305,21.7 317,7.8 336,13.3 346,6.3 365,11.0 389,12.8 400,13.1 411,4.8 434,11.6 454,3.8 468,13.4 483,7.2 499,20.6 523,3.8 540,18.9 557,21.8 578,7.6 600,14"/%3E%3C/svg%3E');
+  --torn-orange: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 26" preserveAspectRatio="none"%3E%3Cpath fill="%23FF7A00" d="M0,26 L0,14 L19,11.7 L29,4.1 L49,20.5 L64,3.7 L75,14.4 L85,7.1 L101,14.9 L111,11.7 L127,5.4 L145,14.2 L163,16.6 L175,15.9 L195,4.8 L205,13.4 L227,12.9 L250,9.2 L264,9.1 L282,19.9 L305,21.7 L317,7.8 L336,13.3 L346,6.3 L365,11.0 L389,12.8 L400,13.1 L411,4.8 L434,11.6 L454,3.8 L468,13.4 L483,7.2 L499,20.6 L523,3.8 L540,18.9 L557,21.8 L578,7.6 L600,14 L600,26Z"/%3E%3Cpolyline fill="none" stroke="%23FFF" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke" points="0,14 19,11.7 29,4.1 49,20.5 64,3.7 75,14.4 85,7.1 101,14.9 111,11.7 127,5.4 145,14.2 163,16.6 175,15.9 195,4.8 205,13.4 227,12.9 250,9.2 264,9.1 282,19.9 305,21.7 317,7.8 336,13.3 346,6.3 365,11.0 389,12.8 400,13.1 411,4.8 434,11.6 454,3.8 468,13.4 483,7.2 499,20.6 523,3.8 540,18.9 557,21.8 578,7.6 600,14"/%3E%3C/svg%3E');
   --sticker: drop-shadow(3px 0 0 var(--paper)) drop-shadow(-3px 0 0 var(--paper))
              drop-shadow(0 3px 0 var(--paper)) drop-shadow(0 -3px 0 var(--paper))
              drop-shadow(0 14px 16px rgb(0 0 0 / .28));
@@ -27,6 +32,8 @@ img, video { display: block; max-width: 100%; height: auto; }
 h1, h2, p { margin: 0; }
 h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: .95; letter-spacing: -.01em; text-wrap: balance; }
 :focus-visible { outline: 4px solid var(--amber); outline-offset: 3px; border-radius: 8px; }
+/* Anything you can click shows the hand, including controls added later; disabled ones don't */
+button:not(:disabled), a[href], summary, [role="button"]:not([aria-disabled="true"]) { cursor: pointer; }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
 .sticker { filter: var(--sticker); }
@@ -41,6 +48,34 @@ h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: .95; le
   padding: 8px 14px; border-radius: 999px; cursor: pointer;
 }
 .lang-switch button[aria-pressed="true"] { background: var(--paper); color: var(--black); }
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+
+/* Sound on/off. Off: no waves, Oz's eyes closed. Once the top bar scrolls away it sticks to the corner. */
+.sound-slot { width: 46px; height: 46px; flex: none; }
+.sound-toggle {
+  width: 46px; height: 46px; padding: 5px; border-radius: 50%; border: 3px solid var(--black);
+  background: var(--paper); color: var(--black); cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.sound-toggle svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.sound-waves { transition: opacity .2s ease; }
+.sound-toggle .eyes-closed { display: none; }
+.sound-toggle[aria-pressed="true"] .sound-waves { opacity: 0; }
+.sound-toggle[aria-pressed="true"] .eyes-open { display: none; }
+.sound-toggle[aria-pressed="true"] .eyes-closed { display: inline; }
+.sound-toggle.stuck { position: fixed; top: 14px; right: 14px; z-index: 25; box-shadow: 0 6px 14px rgb(0 0 0 / .3); }
+
+/* "Sonido activado / desactivado": a little bubble just under the sound switch (placed from script.js,
+   wherever the switch is), its tail pointing up at the icon */
+.toast {
+  position: fixed; top: 0; right: 0; z-index: 30; translate: 0 -6px; pointer-events: none;
+  background: var(--black); color: var(--paper); border: 3px solid var(--paper); border-radius: 14px;
+  padding: 8px 14px; font-weight: 700; white-space: nowrap; opacity: 0; transition: opacity .2s ease, translate .2s ease;
+}
+.toast::before {
+  content: ""; position: absolute; top: -9px; right: 10px; width: 14px; height: 14px; rotate: 45deg;
+  background: var(--black); border-top: 3px solid var(--paper); border-left: 3px solid var(--paper);
+}
+.toast.show { opacity: 1; translate: 0 0; }
 
 /* Hero */
 .hero { min-height: min(92svh, 860px); display: flex; flex-direction: column; }
@@ -53,7 +88,26 @@ h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: .95; le
 .hero h1 .name { color: var(--paper); -webkit-text-stroke: clamp(3px, .5vw, 5px) var(--black); paint-order: stroke fill; }
 .hero .tagline { margin-top: 28px; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 500; max-width: 24ch; }
 .hero-stickers { position: relative; aspect-ratio: 1 / .92; }
-.hero-stickers .main { position: absolute; width: 92%; left: 4%; top: 10%; rotate: 6deg; }
+.hero .hint { margin-top: 24px; }
+/* Tap the cap photo to make Oz purr. No long-press menu, text selection or image drag on repeated taps. */
+.purr {
+  position: absolute; width: 92%; left: 4%; top: 10%; rotate: 6deg; background: none; border: 0; padding: 0;
+  cursor: pointer; border-radius: 16px; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; user-select: none; -webkit-user-select: none;
+}
+.purr img { width: 100%; pointer-events: none; }
+/* While purring, a heart rises from Oz's head (between his ears in oz1.webp) every few seconds */
+.heart {
+  position: absolute; left: 78%; top: 9%; width: clamp(24px, 3vw, 34px); pointer-events: none;
+  animation: heart-float 2.2s ease-out forwards;
+}
+.heart svg { display: block; width: 100%; overflow: visible; fill: var(--paper); stroke: var(--black); stroke-width: 2.2; stroke-linejoin: round; }
+/* Short rise: on phones the hint sits ~60px above Oz's head, so the heart is gone before it gets there */
+@keyframes heart-float {
+  0% { opacity: 0; transform: translate(-50%, 0) scale(.5); }
+  15% { opacity: 1; transform: translate(calc(-50% + var(--sway) * .3), -10px) scale(1); }
+  45% { opacity: 1; }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--sway) * .6), -50px) scale(1.05) rotate(var(--tilt)); }
+}
 .bubble {
   position: absolute; left: 0; top: 0; background: var(--paper); border: 3px solid var(--black); border-radius: 22px;
   padding: 6px 16px; font-weight: 700; font-size: clamp(1.1rem, 2.2vw, 1.6rem); rotate: -9deg;
@@ -62,11 +116,39 @@ h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: .95; le
   content: ""; position: absolute; right: 18px; bottom: -13px; width: 18px; height: 18px; background: var(--paper);
   border-right: 3px solid var(--black); border-bottom: 3px solid var(--black); transform: rotate(45deg) skew(10deg, 10deg);
 }
+/* The bubble says "¡ñam!" until Oz purrs, then "prrr…" */
+.bubble .purr-text, .purr.purring + .bubble .chomp-text { display: none; }
+.purr.purring + .bubble .purr-text { display: inline; }
+
+/* Torn paper between sections: each section's top edge is ripped, in its own colour, over the one above,
+   with a white paper-fibre rim along the tear. The shift keeps neighbouring edges from matching. */
+.facts { --edge: var(--torn-black); --edge-shift: 0px; }
+.castle { --edge: var(--torn-blue); --edge-shift: -210px; }
+.gallery { --edge: var(--torn-orange); --edge-shift: -370px; }
+.goodbye { --edge: var(--torn-black); --edge-shift: -90px; }
+:is(.facts, .castle, .gallery, .goodbye) { position: relative; }
+:is(.facts, .castle, .gallery, .goodbye)::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: calc(100% - 2px); z-index: 1; pointer-events: none;
+  height: clamp(18px, 2.6vw, 28px); background: var(--edge) var(--edge-shift) 100% / 600px 100% repeat-x;
+}
 
 /* Spec sheet */
 .facts { background: var(--black); color: var(--paper); padding-block: clamp(64px, 10vw, 112px); }
 .facts h2 { color: var(--orange); }
 .facts .intro { margin-top: 12px; font-size: 1.25rem; max-width: 40ch; }
+.facts-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 340px); gap: 32px 48px; align-items: center; }
+.facts-photo {
+  rotate: 4deg; background: none; border: 0; padding: 0; cursor: pointer; border-radius: 16px; -webkit-tap-highlight-color: transparent;
+}
+.facts-photo[aria-disabled="true"] { cursor: default; }
+.facts-photo img { width: 100%; }
+/* Tap Oz for the "oiia" spin, synced to oiia.mp3: still through the opening silence (0-0.4 s),
+   six fast turns while the sound plays (0.4-2 s), then facing you again for the closing silence. */
+.facts-photo.spinning img { animation: oiia-spin 3s linear; }
+@keyframes oiia-spin {
+  0%, 13.3% { transform: perspective(900px) rotateY(0deg); }
+  66.7%, 100% { transform: perspective(900px) rotateY(2160deg); }
+}
 .fact-list { list-style: none; padding: 0; margin: 44px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 .fact-list li { background: var(--paper); color: var(--black); border-radius: 18px; padding: 18px 18px 22px; }
 .fact-list li:nth-child(1) { rotate: -2.5deg; }
@@ -90,33 +172,140 @@ h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: .95; le
 /* Gallery */
 .gallery { padding-block: clamp(64px, 10vw, 112px) clamp(80px, 12vw, 140px); }
 .gallery .intro { margin-top: 12px; font-size: 1.25rem; }
-.gallery .hint {
-  display: inline-block; margin-top: 18px; background: var(--paper); border: 3px solid var(--black); border-radius: 999px;
+.hint {
+  display: inline-block; background: var(--paper); color: var(--black); border: 3px solid var(--black); border-radius: 999px;
   padding: 6px 16px; font-weight: 600; rotate: -2deg;
 }
-.meow { background: none; border: 0; padding: 0; cursor: pointer; border-radius: 16px; -webkit-tap-highlight-color: transparent; }
-.meow.meowing { animation: meow-wiggle .45s ease; }
-@keyframes meow-wiggle { 25% { scale: 1.1; rotate: -4deg; } 60% { scale: 1.05; rotate: 5deg; } }
-.sticker-wall { margin-top: 48px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 28px 20px; align-items: center; }
-.sticker-wall > * { transition: rotate .25s ease, scale .25s ease; }
-.sticker-wall > :hover { rotate: 0deg; scale: 1.04; }
-.sticker-wall .a { grid-column: 1 / span 2; rotate: -6deg; }
-.sticker-wall .b { grid-column: 3 / span 2; rotate: 4deg; }
-.sticker-wall .c { grid-column: 5 / span 2; rotate: -3deg; }
-.sticker-wall .d { grid-column: 2 / span 3; rotate: 3deg; }
-.sticker-wall .e { grid-column: 5 / span 2; rotate: -5deg; }
-
-/* Footer */
-.site-footer { background: var(--black); color: var(--paper); padding-block: 56px 48px; position: relative; overflow: hidden; }
-.site-footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px 40px; }
-.site-footer p { font-size: 1.15rem; }
-.watcher { margin: 0; display: flex; align-items: center; gap: 24px; }
-.watcher .phone { width: 150px; flex: none; rotate: -4deg; border-width: 5px; border-radius: 20px; }
-.watcher figcaption {
-  background: var(--orange); color: var(--black); font-weight: 700; font-size: 1.25rem; line-height: 1.2;
-  padding: 10px 16px; border-radius: 12px; rotate: 2deg; max-width: 19ch;
+.gallery .hint { margin-top: 18px; }
+/* Sticker album: a white page with numbered cream slots; empty ones wait with a "?" */
+.album {
+  margin-top: 44px; background: var(--paper); border: 3px solid var(--black); border-radius: 24px;
+  padding: clamp(18px, 3vw, 32px); box-shadow: 0 18px 30px rgb(0 0 0 / .22); rotate: -.6deg;
 }
-.site-footer img { width: 120px; rotate: -12deg; margin-bottom: -60px; }
+.album-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 20px;
+  font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.album-count { color: var(--orange); font-size: 1.3rem; letter-spacing: 0; }
+.album-slots { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 2vw, 22px); }
+.album-slot {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  background: var(--cream); border-radius: 16px; padding: 16px 12px 14px;
+}
+.album-name { font-weight: 700; text-align: center; line-height: 1.15; }
+/* Images are absolutely positioned and centred with max sizes, so they can never grow past their box
+   (percentage max-heights inside grid/aspect-ratio boxes aren't resolved the same way in every browser),
+   and the element hugs the picture, so a photo's print border wraps the photo itself. */
+.album-sticker {
+  position: relative; width: 100%; aspect-ratio: 1; background: none; border: 0; padding: 0;
+  cursor: pointer; border-radius: 12px; -webkit-tap-highlight-color: transparent; transition: translate .2s ease, rotate .2s ease;
+}
+.album-sticker img { position: absolute; inset: 0; margin: auto; max-width: 100%; max-height: 100%; width: auto; height: auto; }
+/* Regular photos (type: 'photo' in gallery.js) are shown as prints instead of cut-out stickers */
+.album-photo { border: 6px solid var(--paper); background: var(--paper); box-shadow: 0 8px 16px rgb(0 0 0 / .28); }
+.album-slot:nth-child(4n + 1) .album-sticker { rotate: -4deg; }
+.album-slot:nth-child(4n + 2) .album-sticker { rotate: 3deg; }
+.album-slot:nth-child(4n + 3) .album-sticker { rotate: -2deg; }
+.album-slot:nth-child(4n + 4) .album-sticker { rotate: 5deg; }
+.album-sticker:hover, .album-sticker:focus-visible { translate: 0 -4px; rotate: 0deg; }
+.album-sticker.peeling { translate: 6px -12px; rotate: -10deg; }
+.album-slot.empty { background: none; outline: 2px dashed rgb(0 0 0 / .25); outline-offset: -2px; color: rgb(0 0 0 / .45); }
+.album-mystery { position: relative; width: 70%; aspect-ratio: 1; display: grid; place-items: center; font-weight: 700; font-size: clamp(2rem, 5vw, 3.2rem); color: var(--paper); }
+.album-silhouette { position: absolute; inset: 0; width: 100%; height: 100%; fill: rgb(0 0 0 / .18); }
+
+/* Pages: ‹ 1 2 3 › under the album (only with more than one page); a new page slides in */
+.album-pager { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 24px; }
+.album-pager[hidden] { display: none; }
+.album-page-numbers { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.album-pager button {
+  min-width: 40px; height: 40px; padding: 0 10px; border: 3px solid var(--black); border-radius: 999px; cursor: pointer;
+  font-family: inherit; font-weight: 700; font-size: 1rem; color: var(--black); background: var(--paper);
+}
+.album-page-prev, .album-page-next { font-size: 1.5rem !important; line-height: 1; }
+.album-pager button[aria-current="page"] { background: var(--black); color: var(--paper); }
+.album-pager button:disabled { opacity: .3; cursor: default; }
+.album-slots.turn-next { animation: page-in-next .3s ease-out; }
+.album-slots.turn-prev { animation: page-in-prev .3s ease-out; }
+@keyframes page-in-next { from { opacity: 0; translate: 40px 0; } }
+@keyframes page-in-prev { from { opacity: 0; translate: -40px 0; } }
+
+/* Close-up view */
+.album-view {
+  width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); padding: 22px; overflow: auto;
+  background: var(--paper); color: var(--black); border: 3px solid var(--black); border-radius: 24px;
+}
+.album-view::backdrop { background: rgb(0 0 0 / .72); }
+.album-view figure { margin: 0; }
+.album-view-photo { position: relative; background: var(--cream); border-radius: 16px; height: min(56vh, 440px); }
+.album-view-photo img { position: absolute; inset: 22px; margin: auto; max-width: calc(100% - 44px); max-height: calc(100% - 44px); width: auto; height: auto; }
+.album-view figcaption { display: grid; gap: 4px; margin-top: 16px; }
+.album-view strong { font-size: 1.5rem; line-height: 1.1; }
+.album-view-alt { opacity: .75; }
+.album-view-date { font-size: .9rem; font-weight: 600; opacity: .6; }
+.album-view-date[hidden] { display: none; }
+.album-close, .album-nav button {
+  font-family: inherit; font-weight: 700; color: var(--paper); background: var(--black); border: 0; border-radius: 999px; cursor: pointer;
+}
+.album-close { position: absolute; top: 12px; right: 12px; z-index: 1; width: 40px; height: 40px; font-size: 1.1rem; }
+.album-nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 16px; }
+.album-nav > button { width: 52px; height: 44px; font-size: 1.8rem; line-height: 1; }
+.album-nav > button.is-hidden { visibility: hidden; }   /* keeps the zoom control centred */
+/* Zoom: − 100% + ↺ between the arrows; the photo can also be pinched, double-tapped and dragged */
+.album-zoom { display: flex; align-items: center; gap: 6px; }
+.album-zoom button { width: 40px; height: 40px; font-size: 1.3rem; line-height: 1; }
+.album-zoom button:disabled { opacity: .3; cursor: default; }
+.zoom-level { min-width: 52px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.album-view-photo { overflow: hidden; touch-action: none; cursor: zoom-in; user-select: none; -webkit-user-select: none; }
+.album-view-photo img { -webkit-user-drag: none; }   /* panning only; never the browser's image drag-and-drop */
+.album-view-photo.zoomed { cursor: grab; }
+.album-view-photo.panning { cursor: grabbing; }
+.album-view-photo img { transform-origin: center; }
+.album-view-photo img.smooth { transition: transform .2s ease; }
+@media (prefers-reduced-motion: no-preference) {
+  .album-view[open] { animation: album-pop .25s cubic-bezier(.2, 1.4, .4, 1); }
+  @keyframes album-pop { from { opacity: 0; scale: .9; } }
+}
+
+/* Before you go: same text + phone layout as the castle */
+.goodbye { background: var(--black); color: var(--paper); padding-block: clamp(64px, 10vw, 112px); }
+.goodbye .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(200px, 280px); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.eyebrow { margin-bottom: 14px; color: var(--orange); font-weight: 700; font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; }
+.goodbye .intro { margin-top: 18px; font-size: 1.3rem; max-width: 34ch; }
+.goodbye .phone { rotate: -4deg; }
+.goodbye .hint { margin-top: 24px; }
+/* "Atrapa la pose": tapping the video flashes, freezes, and pops that frame out as an instant photo */
+.pose-cam { position: relative; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.flash { position: absolute; inset: 0; background: var(--paper); opacity: 0; pointer-events: none; }
+.pose-cam.snap .flash { animation: snap-flash .45s ease-out; }
+@keyframes snap-flash { from { opacity: .9; } to { opacity: 0; } }
+/* Photos sit centred above the phone in three slots; empty slots keep the space so the phone never jumps */
+.pose-stage { display: grid; gap: 22px; }
+.poses { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.polaroid {
+  position: relative; margin: 0; padding: 6px 6px 24px; background: var(--paper);
+  rotate: var(--tilt); box-shadow: 0 10px 18px rgb(0 0 0 / .45);
+}
+.polaroid canvas, .polaroid.slot span { display: block; width: 100%; aspect-ratio: 1; background: var(--black); }
+.polaroid.slot { background: none; box-shadow: none; rotate: 0deg; outline: 2px dashed rgb(255 255 255 / .22); outline-offset: -2px; }
+.polaroid.slot span { background: none; }
+.polaroid figcaption { position: absolute; inset: auto 0 4px; color: var(--black); font-weight: 600; font-size: .78rem; text-align: center; }
+.polaroid.fly { animation: pose-fly .6s cubic-bezier(.2, .9, .3, 1.15) both; }
+@keyframes pose-fly {
+  from { opacity: 0; transform: translate(var(--from-x), var(--from-y)) scale(.4) rotate(-18deg); }
+  25% { opacity: 1; }
+}
+
+/* Footer: sleeping Oz (back-to-top button) centred over one quiet line */
+.site-footer { background: var(--black); color: var(--paper); border-top: 2px solid rgb(255 255 255 / .14); padding-block: 32px 24px; }
+.site-footer .wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.site-footer p { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; font-size: 1rem; text-align: center; opacity: .85; }
+.footer-logo { width: 24px; height: 24px; }
+.footer-logo path { fill: var(--paper); }
+.to-top {
+  display: flex; align-items: flex-end; gap: 6px; background: none; border: 0; padding: 4px; cursor: pointer;
+  border-radius: 16px; -webkit-tap-highlight-color: transparent;
+}
+.to-top img { width: 100px; rotate: 6deg; }
+.to-top-paw { width: 30px; height: 30px; margin-bottom: 8px; fill: var(--orange); transition: translate .25s ease; }
+.to-top:hover .to-top-paw, .to-top:focus-visible .to-top-paw { translate: 0 -6px; }
 
 /* Ambush: Oz peeks out of a random corner every now and then. The screen edge
    hides the rest of his body, so nothing crops his sticker outline. */
@@ -135,6 +324,7 @@ h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: .95; le
 
 /* Paw attack: tapping the castle makes Oz swipe at you */
 .castle-video[role="button"] { cursor: pointer; }
+.castle-video[aria-disabled="true"] { cursor: default; }
 .paw-attack { position: absolute; width: 0; height: 0; pointer-events: none; z-index: 20; }
 .paw { position: absolute; width: 150px; left: -75px; top: -30px; transform-origin: 50% 100%; animation: paw-swipe .8s cubic-bezier(.3, .7, .3, 1) forwards; }
 @keyframes paw-swipe {
@@ -156,30 +346,45 @@ h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: .95; le
   .slap-in { animation: slap .5s cubic-bezier(.2, 1.5, .4, 1) both; }
   .bubble.slap-in { animation-delay: .3s; }
   @keyframes slap { from { opacity: 0; scale: 1.35; } }
+  /* While purring, the sticker rumbles a little (on the button, so the img's slap-in never replays) */
+  .purr.purring { animation: purr-rumble .08s linear infinite alternate; }
+  /* The sound switch drops into the corner, and shakes when something tries to play while it's off */
+  .sound-toggle.stuck { animation: sound-drop .25s ease-out; }
+  @keyframes sound-drop { from { opacity: 0; translate: 0 -24px; } }
+  /* The whole button shakes. When it's stuck, the drop-in stays in the list so it doesn't replay afterwards. */
+  .sound-toggle.nudge { animation: sound-nudge .45s ease; }
+  .sound-toggle.stuck.nudge { animation: sound-drop .25s ease-out, sound-nudge .45s ease; }
+  @keyframes sound-nudge { 20% { rotate: -16deg; } 40% { rotate: 13deg; } 60% { rotate: -9deg; } 80% { rotate: 5deg; } }
+  @keyframes purr-rumble { from { translate: -1px 0; } to { translate: 1px 1px; } }
 }
 @media (prefers-reduced-motion: reduce) {
-  .sticker-wall > * { transition: none; }
-  .meow.meowing { animation: none; }
+  .album-sticker { transition: none; }
+  .album-slots.turn-next, .album-slots.turn-prev { animation: none; }
   .ambush { display: none; }
+  .heart { display: none; }
+  .sound-toggle.nudge { outline: 4px solid var(--amber); outline-offset: 2px; }   /* a flash instead of the shake */
+  .toast { transition: none; }
+  .facts-photo.spinning img { animation: none; }
+  .to-top-paw { transition: none; }
+  .pose-cam.snap .flash, .polaroid.fly { animation: none; }
 }
 
 @media (max-width: 860px) {
   .hero-stage { grid-template-columns: 1fr; padding-block: 24px 48px; }
   .hero-stickers { max-width: 520px; width: 100%; justify-self: center; }
   .fact-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts-top { grid-template-columns: 1fr; }
+  .facts-photo { max-width: 300px; justify-self: center; }
   .castle .wrap { grid-template-columns: 1fr; }
   .castle .phone { max-width: 280px; justify-self: center; }
-  .sticker-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .sticker-wall > .a, .sticker-wall > .b, .sticker-wall > .c, .sticker-wall > .e { grid-column: auto; }
-  .sticker-wall > .d { grid-column: 1 / -1; order: 1; }
-  .site-footer .wrap { flex-wrap: wrap; }
-  .watcher { flex-basis: 100%; }
+  .album-slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .goodbye .wrap { grid-template-columns: 1fr; }
+  .pose-stage { width: 100%; max-width: 300px; justify-self: center; }
+  .goodbye .phone { width: 100%; max-width: 240px; justify-self: center; }
 }
 @media (max-width: 480px) {
   .brand { font-size: 1.6rem; }
   .fact-list { gap: 16px; }
   .fact-list b { font-size: 1.35rem; }
   .ambush { --size: 180px; --peek: 112px; }
-  .site-footer .wrap { flex-direction: column; align-items: flex-start; }
-  .site-footer img { align-self: flex-end; }
 }

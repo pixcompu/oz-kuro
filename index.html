@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Oz · la mascota</title>
+  <title>Oz Kuro</title>
   <meta name="description" content="Oz es un gato negro de ojos amarillos, experto en emboscadas y guardián de su castillo azul.">
   <meta name="theme-color" content="#FF7A00">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="Oz · la mascota">
+  <meta property="og:title" content="Oz Kuro">
   <meta property="og:description" content="Un gato negro, ojos amarillos y mordidas sorpresa.">
-  <meta property="og:image" content="assets/img/oz1.png">
+  <meta property="og:image" content="assets/img/originals/oz1.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="gallery.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,19 +24,39 @@
         <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 54 L12 14 L26 26 Q32 24 38 26 L52 14 L52 54 Z"/><ellipse cx="23" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="41" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="23" cy="38" rx="1.4" ry="4.2"/><ellipse cx="41" cy="38" rx="1.4" ry="4.2"/></svg>
         oz
       </div>
-      <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="language">
-        <button type="button" data-lang="es" aria-pressed="true">ES</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <div class="topbar-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="language">
+          <button type="button" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <!-- Sound on/off: Oz with sound waves; muted, the waves go and he closes his eyes. The slot keeps
+             its place in the bar when the button sticks to the corner on scroll. -->
+        <span class="sound-slot">
+          <button type="button" class="sound-toggle" aria-pressed="false" aria-label="Silenciar sonidos" data-i18n-aria="mute">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <g class="sound-waves" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round">
+                <path d="M9.5 31.8A24 24 0 0 1 23.8 17.5"/><path d="M3.8 29.7A30 30 0 0 1 21.7 11.8"/>
+                <path d="M40.2 17.5A24 24 0 0 1 54.5 31.8"/><path d="M42.3 11.8A30 30 0 0 1 60.2 29.7"/>
+              </g>
+              <g transform="translate(32 40) scale(.7) translate(-32 -34)">
+                <path d="M12 54 L12 14 L26 26 Q32 24 38 26 L52 14 L52 54 Z"/>
+                <g class="eyes-open"><ellipse cx="23" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="41" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="23" cy="38" rx="1.4" ry="4.2"/><ellipse cx="41" cy="38" rx="1.4" ry="4.2"/></g>
+                <g class="eyes-closed" fill="none" stroke="#FFC21A" stroke-width="3" stroke-linecap="round"><path d="M18 37 Q23 42 28 37"/><path d="M36 37 Q41 42 46 37"/></g>
+              </g>
+            </svg>
+          </button>
+        </span>
       </div>
     </div>
     <div class="wrap hero-stage">
       <div>
         <h1><span data-i18n="hello">Hola,</span><br><span data-i18n="im">soy</span> <span class="name">Oz</span></h1>
         <p class="tagline" data-i18n="tagline">Mascota oficial. Experto en emboscadas. Muerde poquito (casi siempre).</p>
+        <p class="hint" id="purr-hint" data-i18n="purrHint">Toca a Oz para que ronronee (y otra vez para que pare).</p>
       </div>
       <div class="hero-stickers">
-        <img class="sticker main slap-in" src="assets/img/oz1.png" width="900" height="770" alt="Oz mordiendo una gorra negra" data-i18n-alt="altCap">
-        <span class="bubble slap-in" data-i18n="chomp">¡ñam!</span>
+        <button type="button" class="purr" aria-describedby="purr-hint"><img class="sticker slap-in" src="assets/img/oz1.webp" width="900" height="770" alt="Oz mordiendo una gorra negra" data-i18n-alt="altCap"></button>
+        <span class="bubble slap-in"><span class="chomp-text" data-i18n="chomp">¡ñam!</span><span class="purr-text" data-i18n="purrSound">prrr…</span></span>
       </div>
     </div>
   </header>
@@ -43,8 +64,13 @@
   <main>
     <section class="facts" aria-labelledby="facts-title">
       <div class="wrap">
-        <h2 id="facts-title" data-i18n="factsTitle">Ficha técnica</h2>
-        <p class="intro" data-i18n="factsIntro">Todo lo que necesitas saber antes de acercarte.</p>
+        <div class="facts-top">
+          <div>
+            <h2 id="facts-title" data-i18n="factsTitle">Conoce a Oz</h2>
+            <p class="intro" data-i18n="factsIntro">Pocas palabras, muchas emboscadas.</p>
+          </div>
+          <button type="button" class="facts-photo"><img class="sticker" src="assets/img/oz8.webp" width="900" height="756" loading="lazy" alt="Oz echado frente a la computadora, mirando a la cámara" data-i18n-alt="altLoaf"></button>
+        </div>
         <ul class="fact-list">
           <li><b data-i18n="coat">Pelaje</b><span data-i18n="coatText">Negro total, modo ninja.</span></li>
           <li><b data-i18n="eyes">Ojos</b><span data-i18n="eyesText">Amarillos. Te están mirando.</span></li>
@@ -71,14 +97,35 @@
     <section class="gallery" aria-labelledby="gallery-title">
       <div class="wrap">
         <h2 id="gallery-title" data-i18n="galleryTitle">Oz en todas sus formas</h2>
-        <p class="intro" data-i18n="galleryIntro">Sentado, estirado, panza arriba o hecho bolita.</p>
-        <p class="hint" data-i18n="galleryHint">Toca a Oz para oírlo maullar.</p>
-        <div class="sticker-wall">
-          <button type="button" class="meow a"><img class="sticker" src="assets/img/oz3.png" width="590" height="900" loading="lazy" alt="Oz sentado como persona, con las patas estiradas" data-i18n-alt="altSitting"></button>
-          <button type="button" class="meow b"><img class="sticker" src="assets/img/oz2.png" width="632" height="900" loading="lazy" alt="Oz recostado, mirando de reojo" data-i18n-alt="altLounging"></button>
-          <button type="button" class="meow c"><img class="sticker" src="assets/img/oz4.png" width="813" height="900" loading="lazy" alt="Oz panza arriba" data-i18n-alt="altBellyUp"></button>
-          <button type="button" class="meow d"><img class="sticker" src="assets/img/oz7.png" width="900" height="397" loading="lazy" alt="Oz echado de lado, listo para atacar" data-i18n-alt="altPounce"></button>
-          <button type="button" class="meow e"><img class="sticker" src="assets/img/oz5.png" width="769" height="900" loading="lazy" alt="Oz estirado en el piso" data-i18n-alt="altStretched"></button>
+        <p class="intro" data-i18n="galleryIntro">Faltan estampitas… Oz sigue posando (cuando quiere).</p>
+        <p class="hint" data-i18n="galleryHint">Toca un sticker para verlo de cerca.</p>
+        <div class="album">
+          <p class="album-head"><span data-i18n="albumTitle">Álbum oficial</span> <span class="album-count"></span></p>
+          <ol class="album-slots"></ol><!-- filled from gallery.js -->
+          <nav class="album-pager" aria-label="Páginas del álbum" data-i18n-aria="albumPages" hidden>
+            <button type="button" class="album-page-prev" aria-label="Página anterior" data-i18n-aria="prevPage">‹</button>
+            <span class="album-page-numbers"></span>
+            <button type="button" class="album-page-next" aria-label="Página siguiente" data-i18n-aria="nextPage">›</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="goodbye" aria-labelledby="goodbye-title">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow" data-i18n="beforeYouGo">Antes de irte…</p>
+          <h2 id="goodbye-title" data-i18n="watching">Te está vigilando desde su página.</h2>
+          <p class="intro" data-i18n="watchingIntro">Aunque cierres la pestaña, Oz sabe que estuviste aquí.</p>
+          <p class="hint" id="pose-hint" data-i18n="poseHint">Toca el video para atrapar su mejor pose.</p>
+        </div>
+        <div class="pose-stage">
+          <div class="poses"><figure class="polaroid slot" aria-hidden="true"><span></span></figure><figure class="polaroid slot" aria-hidden="true"><span></span></figure><figure class="polaroid slot" aria-hidden="true"><span></span></figure></div>
+          <div class="phone pose-cam" role="button" tabindex="0" aria-label="Atrapar una pose de Oz" data-i18n-aria="poseCam" aria-describedby="pose-hint">
+            <video src="assets/video/belly-up.mp4" poster="assets/video/belly-up.jpg" autoplay muted loop playsinline preload="metadata"
+                   aria-label="Video: Oz jugando panza arriba" data-i18n-aria="bellyUpVideo"></video>
+            <span class="flash" aria-hidden="true"></span>
+          </div>
         </div>
       </div>
     </section>
@@ -86,17 +133,45 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <figure class="watcher">
-        <div class="phone">
-          <video src="assets/video/belly-up.mp4" poster="assets/video/belly-up.jpg" autoplay muted loop playsinline preload="metadata"
-                 aria-label="Video: Oz jugando panza arriba" data-i18n-aria="bellyUpVideo"></video>
-        </div>
-        <figcaption data-i18n="watching">Te está vigilando desde su página.</figcaption>
-      </figure>
-      <p data-i18n="footer">Hecho con cariño (y algunas mordidas).</p>
-      <img class="sticker" src="assets/img/oz6.png" width="535" height="583" loading="lazy" alt="">
+      <button type="button" class="to-top" aria-label="Volver al inicio" data-i18n-aria="toTop">
+        <img class="sticker" src="assets/img/oz6.webp" width="535" height="583" loading="lazy" alt="">
+        <svg class="to-top-paw" viewBox="0 0 40 40" aria-hidden="true">
+          <ellipse cx="8" cy="17" rx="4" ry="5"/><ellipse cx="15.5" cy="9" rx="4" ry="5.2"/>
+          <ellipse cx="24.5" cy="9" rx="4" ry="5.2"/><ellipse cx="32" cy="17" rx="4" ry="5"/>
+          <path d="M20 19c6 0 10.5 6 10.5 11 0 4-4.5 5.5-10.5 5.5S9.5 34 9.5 30c0-5 4.5-11 10.5-11Z"/>
+        </svg>
+      </button>
+      <p><svg class="footer-logo" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 54 L12 14 L26 26 Q32 24 38 26 L52 14 L52 54 Z"/><ellipse cx="23" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="41" cy="38" rx="5" ry="5.5" fill="#FFC21A"/><ellipse cx="23" cy="38" rx="1.4" ry="4.2"/><ellipse cx="41" cy="38" rx="1.4" ry="4.2"/></svg> <span data-i18n="footer">Hecho con cariño (y algunas mordidas).</span> <span>© 2026</span></p>
     </div>
   </footer>
+
+  <!-- "Sonido activado / desactivado" notice -->
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Close-up of an album sticker -->
+  <dialog class="album-view" aria-labelledby="album-view-name">
+    <button type="button" class="album-close" aria-label="Cerrar" data-i18n-aria="close">✕</button>
+    <figure>
+      <div class="album-view-photo"><img class="sticker" src="" alt="" draggable="false"></div>
+      <figcaption>
+        <strong id="album-view-name"></strong>
+        <span class="album-view-alt"></span>
+        <span class="album-view-date"></span>
+      </figcaption>
+    </figure>
+    <div class="album-nav">
+      <button type="button" class="album-prev" aria-label="Sticker anterior" data-i18n-aria="prevSticker">‹</button>
+      <div class="album-zoom" role="group" aria-label="Zoom">
+        <button type="button" class="zoom-out" aria-label="Alejar" data-i18n-aria="zoomOut">−</button>
+        <output class="zoom-level">100%</output>
+        <button type="button" class="zoom-in" aria-label="Acercar" data-i18n-aria="zoomIn">+</button>
+        <button type="button" class="zoom-reset" aria-label="Restablecer zoom" data-i18n-aria="zoomReset">↺</button>
+      </div>
+      <button type="button" class="album-next" aria-label="Sticker siguiente" data-i18n-aria="nextSticker">›</button>
+    </div>
+  </dialog>
+
+  <template id="album-silhouette"><svg class="album-silhouette" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 54 L12 14 L26 26 Q32 24 38 26 L52 14 L52 54 Z"/></svg></template>
 
   <template id="paw-template">
     <div class="paw-attack" aria-hidden="true">
@@ -125,6 +200,6 @@
     </div>
   </template>
 
-  <div class="ambush" aria-hidden="true"><img class="sticker" src="assets/img/oz3.png" width="590" height="900" alt=""></div>
+  <div class="ambush" aria-hidden="true"><img class="sticker" src="assets/img/oz3.webp" width="590" height="900" alt=""></div>
 </body>
 </html>
