@@ -45,7 +45,8 @@ const translations = {
     watchingIntro: 'Even if you close the tab, Oz knows you were here.',
     poseHint: 'Tap the video to catch his best pose.',
     poseCam: "Catch one of Oz's poses",
-    footer: 'Made with love (and a few bites).',
+    footer: 'Made with love (and a few bites) by',
+    github: "Felix's GitHub profile",
     altCap: 'Oz biting a black cap',
     altLoaf: 'Oz loafing in front of the computer, staring at the camera'
   }

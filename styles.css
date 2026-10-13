@@ -298,6 +298,11 @@ button:not(:disabled), a[href], summary, [role="button"]:not([aria-disabled="tru
 .site-footer .wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
 .site-footer p { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; font-size: 1rem; text-align: center; opacity: .85; }
 .footer-logo { width: 24px; height: 24px; }
+.site-footer strong { font-weight: 700; }
+/* GitHub mark linking to Felix's profile, sitting on the line next to his name */
+.github { display: inline-block; vertical-align: -4px; margin-left: 4px; color: var(--paper); transition: color .2s ease; }
+.github svg { display: block; width: 20px; height: 20px; fill: currentColor; }
+.github:hover, .github:focus-visible { color: var(--orange); }
 .footer-logo path { fill: var(--paper); }
 .to-top {
   display: flex; align-items: flex-end; gap: 6px; background: none; border: 0; padding: 4px; cursor: pointer;
